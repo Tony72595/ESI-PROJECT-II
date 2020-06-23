@@ -1,2 +1,2 @@
 # ESI-PROJECT-II
-/img "logic.png"
+![image](logic.png)
