@@ -22,9 +22,9 @@ client.subscribe("FirstRoundCheck", async function({ task, taskService }) {
   }else
     processVariables = new Variables();
     processVariables.set("Decline",gpa);
+    
   // complete the task
-  await taskService.complete(task, processVariables);
-});
+
 
 const web3 = new Web3(new Web3.providers.HttpProvider('https://rinkeby.infura.io/v3/912db4e761714175adda50403cac5bfc'))
 const account1 = '0x029952e9822Ae48539d05d2283bfDc0d167006aC';
@@ -71,10 +71,11 @@ const raw ='0x'+ serializedTx.toString('hex')
 
 //broadcast a transaction
 web3.eth.sendSignedTransaction(raw,(err,txHash) => {
-    console.log('err',err,'txHash:',txHash)
+    console.log('err',err, 'txHash:',txHash)
     //use this txHash to find the contact on Etherscon!
     
 })
 })
-
+await taskService.complete(task, processVariables);
+});
 
