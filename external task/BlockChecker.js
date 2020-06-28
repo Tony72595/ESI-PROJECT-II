@@ -37,6 +37,6 @@ class TransactionChecker {
     }
 }
 
-let txChecker = new TransactionChecker('912db4e761714175adda50403cac5bfc', '0xf4fa49c691644cc721f49a56f2ea7c5310e4cbfd');
+let txChecker = new TransactionChecker('', '');
 txChecker.subscribe('pendingTransactions');
 txChecker.watchTransactions();
